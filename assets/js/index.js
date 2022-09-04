@@ -1,9 +1,10 @@
 // 1. Создать функцию isAdult, которая будет проверять возраст пользователя на совершеннолетие (Пусть совершеннолетним считается пользователь, которому исполнилось 18 лет):
+const age = prompt ('Enter your age')
 const isAdult = function (age) {
   if (typeof +age !== 'number' || isNaN(age)) {
     return null
   }
-  return !!(age >= 18 ? 1 : 0)
+  return age >= 18 ? true : false
 }
 // 2.  Создать функцию checkMultiplicity, которая принимает два числа и проверяет кратность первого вторым:
 const checkMultiplicity = function (num1, num2) {
@@ -14,7 +15,7 @@ const checkMultiplicity = function (num1, num2) {
   ) {
     return null
   }
-  return !!(num1 % num2 === 0)
+  return num1 % num2 === 0
 }
 // 3. Проверка возможности треугольника. Создать функцию которая принимает длины сторон треугольника; функция возвращает true если треугольник возможен и false если нет
 const isTriangle = function (a, b, c) {
