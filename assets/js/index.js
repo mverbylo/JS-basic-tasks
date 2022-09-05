@@ -1,10 +1,10 @@
 // 1. Создать функцию isAdult, которая будет проверять возраст пользователя на совершеннолетие (Пусть совершеннолетним считается пользователь, которому исполнилось 18 лет):
-const age = prompt ('Enter your age')
+const age = prompt('Enter your age')
 const isAdult = function (age) {
   if (typeof +age !== 'number' || isNaN(age)) {
     return null
   }
-  return age >= 18 ? true : false
+  return age >= 18
 }
 // 2.  Создать функцию checkMultiplicity, которая принимает два числа и проверяет кратность первого вторым:
 const checkMultiplicity = function (num1, num2) {
@@ -48,11 +48,8 @@ const primeNumber = function (num) {
   if (typeof +num !== 'number' || isNaN(num)) {
     return null
   }
-  if (+num <= 0 || +num % 1 !== 0) {
-    return false
-  }
-  for (let i = 2; i < num - 1; i++) {
-    if (num % i == 0) {
+  for (let i = 2; i < num; i++) {
+    if (num % i == 0 || +num <= 0 || +num % 1 !== 0) {
       return false
     }
   }
