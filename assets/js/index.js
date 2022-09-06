@@ -30,7 +30,7 @@ const isTriangle = function (a, b, c) {
   ) {
     return null
   }
-  return !(a >= b + c && b >= a + c && c >= b + a)
+  return a<= b + c && b <= a + c && c <= b + a
 }
 // 4. написть функцию, которая принимает число и возвращает сумму нечетных чисел от 1 до указанного числа
 const sumOfOddNumbers = function (num) {
