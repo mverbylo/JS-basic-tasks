@@ -1,7 +1,7 @@
 // 1. Создать функцию isAdult, которая будет проверять возраст пользователя на совершеннолетие (Пусть совершеннолетним считается пользователь, которому исполнилось 18 лет):
-const age = prompt("Enter your age");
+const age = +prompt("Enter your age");
 const isAdult = function (age) {
-  if (typeof +age !== "number" || isNaN(age)) {
+  if (typeof age !== "number" || isNaN(age)) {
     return null;
   }
   return age >= 18;
@@ -18,11 +18,11 @@ const isTriangle = function (a, b, c) {
   if (isNaN(a - b - c) || a <= 0 || b <= 0 || c <= 0) {
     return null;
   }
-  return a <= b + c && b <= a + c && c <= b + a;
+  return a < b + c && b < a + c && c < b + a;
 };
 // 4. написть функцию, которая принимает число и возвращает сумму нечетных чисел от 1 до указанного числа
 const sumOfOddNumbers = function (num) {
-  if (typeof +num !== "number" || isNaN(num)) {
+  if (typeof num !== "number" || isNaN(num)) {
     return null;
   }
   let sum = 0;
@@ -33,11 +33,11 @@ const sumOfOddNumbers = function (num) {
 };
 // 5. Создать функцию, которая будет проверять, является ли число простым. Простым является неотрицательное число, которое делится нацело только на самого себя или на 1.
 const primeNumber = function (num) {
-  if (typeof +num !== "number" || isNaN(num)) {
+  if (typeof num !== "number" || isNaN(num) || num <= 0 || num % 1 !== 0) {
     return null;
   }
   for (let i = 2; i < num; i++) {
-    if (num % i == 0 || +num <= 0 || +num % 1 !== 0) {
+    if (num % i === 0 ) {
       return false;
     }
   }
